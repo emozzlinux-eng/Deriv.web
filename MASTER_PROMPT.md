@@ -1,11 +1,28 @@
 # 🚀 DERIV INTELLIGENCE
+
 ## AI-Powered Deriv Analysis, Risk Management & Controlled Trading Platform
 
-### MASTER VIBE-CODING PROMPT
+### MASTER VIBE-CODING PROMPT — INDEX
+
+This document is the entry point to the specification.
+Every numbered rule lives in its own module under [`docs/specs/`](docs/specs/)
+so it can be read, cited and updated independently. Section numbering is
+unchanged from the original monolith (`§0`–`§95`, plus `START NOW`).
+
+See also:
+
+- [`README.md`](README.md) — repository overview
+- [`docs/PROJECT_AUDIT.md`](docs/PROJECT_AUDIT.md) — Phase 0 audit deliverable
 
 ---
 
-# 0. YOUR ROLE
+# I · Role, Vision & Method
+
+> What the system is and how work must proceed.
+
+## [0. YOUR ROLE](docs/specs/00-your-role.md)
+
+# YOUR ROLE
 
 You are the lead engineer responsible for building **DERIV INTELLIGENCE**.
 
@@ -34,7 +51,9 @@ You must inspect the repository, understand the architecture, identify risks, cr
 
 ---
 
-# 1. PROJECT VISION
+## [1. PROJECT VISION](docs/specs/01-project-vision.md)
+
+# PROJECT VISION
 
 Build:
 
@@ -77,7 +96,9 @@ The goal is:
 
 ---
 
-# 2. IMPORTANT PRINCIPLE
+## [2. IMPORTANT PRINCIPLE](docs/specs/02-important-principle.md)
+
+# IMPORTANT PRINCIPLE
 
 Never assume that a signal means a guaranteed profitable trade.
 
@@ -101,7 +122,9 @@ rather than:
 
 ---
 
-# 3. DEVELOPMENT PHILOSOPHY
+## [3. DEVELOPMENT PHILOSOPHY](docs/specs/03-development-philosophy.md)
+
+# DEVELOPMENT PHILOSOPHY
 
 DO NOT build the entire project at once.
 
@@ -135,7 +158,9 @@ Never skip these steps.
 
 ---
 
-# 4. FIRST COMMAND
+## [4. FIRST COMMAND](docs/specs/04-first-command.md)
+
+# FIRST COMMAND
 
 Before writing code:
 
@@ -190,7 +215,13 @@ Wait for approval.
 
 ---
 
-# 5. TECHNOLOGY STACK
+# II · Stack & Architecture
+
+> Technology choices and mandatory structural separation.
+
+## [5. TECHNOLOGY STACK](docs/specs/05-technology-stack.md)
+
+# TECHNOLOGY STACK
 
 Use the following architecture unless the existing project has a strong reason to use something else.
 
@@ -248,7 +279,9 @@ Rich/Textual
 
 ---
 
-# 6. ARCHITECTURE
+## [6. ARCHITECTURE](docs/specs/06-architecture.md)
+
+# ARCHITECTURE
 
 Use:
 
@@ -297,7 +330,9 @@ MacBook
 
 ---
 
-# 7. CORE ARCHITECTURAL SEPARATION
+## [7. CORE ARCHITECTURAL SEPARATION](docs/specs/07-core-architectural-separation.md)
+
+# CORE ARCHITECTURAL SEPARATION
 
 This is mandatory.
 
@@ -339,7 +374,9 @@ Deriv
 
 ---
 
-# 8. REPOSITORY STRUCTURE
+## [8. REPOSITORY STRUCTURE](docs/specs/08-repository-structure.md)
+
+# REPOSITORY STRUCTURE
 
 Create a clean structure:
 
@@ -386,7 +423,13 @@ Adapt this structure to the actual project instead of blindly overwriting an exi
 
 ---
 
-# 9. SECURITY FIRST
+# III · Security & Secrets
+
+> Authentication, sessions, credentials, environment and repository security.
+
+## [9. SECURITY FIRST](docs/specs/09-security-first.md)
+
+# SECURITY FIRST
 
 Security is not a final phase.
 
@@ -405,7 +448,9 @@ Never trust the frontend.
 
 ---
 
-# 10. AUTHENTICATION
+## [10. AUTHENTICATION](docs/specs/10-authentication.md)
+
+# AUTHENTICATION
 
 Use Supabase Auth.
 
@@ -425,7 +470,9 @@ Never store passwords in the application database.
 
 ---
 
-# 11. PASSWORD SECURITY
+## [11. PASSWORD SECURITY](docs/specs/11-password-security.md)
+
+# PASSWORD SECURITY
 
 Minimum password:
 
@@ -447,7 +494,9 @@ Never send passwords to analytics.
 
 ---
 
-# 12. LOGIN
+## [12. LOGIN](docs/specs/12-login.md)
+
+# LOGIN
 
 Create:
 
@@ -475,7 +524,9 @@ Do not reveal whether a specific email exists.
 
 ---
 
-# 13. MFA
+## [13. MFA](docs/specs/13-mfa.md)
+
+# MFA
 
 Build architecture for MFA.
 
@@ -499,7 +550,9 @@ Sensitive actions may require recent authentication and/or MFA.
 
 ---
 
-# 14. SESSION SECURITY
+## [14. SESSION SECURITY](docs/specs/14-session-security.md)
+
+# SESSION SECURITY
 
 Support:
 
@@ -513,7 +566,9 @@ Never store authentication tokens in unsafe persistent client storage unless the
 
 ---
 
-# 15. DERIV CREDENTIAL SECURITY
+## [15. DERIV CREDENTIAL SECURITY](docs/specs/15-deriv-credential-security.md)
+
+# DERIV CREDENTIAL SECURITY
 
 CRITICAL.
 
@@ -536,7 +591,9 @@ Before implementing Deriv authentication, verify current official Deriv document
 
 ---
 
-# 16. ENVIRONMENT VARIABLES
+## [16. ENVIRONMENT VARIABLES](docs/specs/16-environment-variables.md)
+
+# ENVIRONMENT VARIABLES
 
 Use:
 
@@ -573,7 +630,9 @@ or encryption keys.
 
 ---
 
-# 17. GITHUB SECURITY
+## [17. GITHUB SECURITY](docs/specs/17-github-security.md)
+
+# GITHUB SECURITY
 
 Configure:
 
@@ -601,7 +660,13 @@ Enable:
 
 ---
 
-# 18. DATABASE
+# IV · Data Layer
+
+> Database schema, row-level security and migrations.
+
+## [18. DATABASE](docs/specs/18-database.md)
+
+# DATABASE
 
 Use Supabase PostgreSQL.
 
@@ -637,7 +702,9 @@ where appropriate.
 
 ---
 
-# 19. ROW LEVEL SECURITY
+## [19. ROW LEVEL SECURITY](docs/specs/19-row-level-security.md)
+
+# ROW LEVEL SECURITY
 
 Enable RLS on all user-owned tables.
 
@@ -655,7 +722,9 @@ Test RLS explicitly.
 
 ---
 
-# 20. DATABASE MIGRATIONS
+## [20. DATABASE MIGRATIONS](docs/specs/20-database-migrations.md)
+
+# DATABASE MIGRATIONS
 
 All schema changes must be migration-based.
 
@@ -670,7 +739,13 @@ Every migration must be:
 
 ---
 
-# 21. DERIV CLIENT
+# V · Deriv Integration & Market Data
+
+> Client, WebSocket manager, candles and multi-timeframe data.
+
+## [21. DERIV CLIENT](docs/specs/21-deriv-client.md)
+
+# DERIV CLIENT
 
 Create a dedicated Deriv client.
 
@@ -700,7 +775,9 @@ Do not allow random application components to call raw Deriv WebSocket commands.
 
 ---
 
-# 22. DERIV WEBSOCKET
+## [22. DERIV WEBSOCKET](docs/specs/22-deriv-websocket.md)
+
+# DERIV WEBSOCKET
 
 Build a centralized WebSocket manager.
 
@@ -730,7 +807,9 @@ ERROR
 
 ---
 
-# 23. MARKET DATA
+## [23. MARKET DATA](docs/specs/23-market-data.md)
+
+# MARKET DATA
 
 Build:
 
@@ -752,7 +831,9 @@ Do not create one WebSocket connection for every indicator.
 
 ---
 
-# 24. CANDLE ENGINE
+## [24. CANDLE ENGINE](docs/specs/24-candle-engine.md)
+
+# CANDLE ENGINE
 
 Generate candles from available market data.
 
@@ -783,7 +864,9 @@ Clearly identify incomplete candles.
 
 ---
 
-# 25. MULTI-TIMEFRAME ENGINE
+## [25. MULTI-TIMEFRAME ENGINE](docs/specs/25-multi-timeframe-engine.md)
+
+# MULTI-TIMEFRAME ENGINE
 
 Analyze multiple timeframes simultaneously.
 
@@ -811,7 +894,13 @@ TIMEFRAME | TREND | MOMENTUM | VOLATILITY | SETUP
 
 ---
 
-# 26. INDICATOR ENGINE
+# VI · Analysis Engines
+
+> Indicators, structure, price action, levels and regime detection.
+
+## [26. INDICATOR ENGINE](docs/specs/26-indicator-engine.md)
+
+# INDICATOR ENGINE
 
 Implement modular indicators.
 
@@ -841,7 +930,9 @@ Volatility:
 
 ---
 
-# 27. MARKET STRUCTURE
+## [27. MARKET STRUCTURE](docs/specs/27-market-structure.md)
+
+# MARKET STRUCTURE
 
 Detect:
 
@@ -860,7 +951,9 @@ Visualize on chart.
 
 ---
 
-# 28. PRICE ACTION
+## [28. PRICE ACTION](docs/specs/28-price-action.md)
+
+# PRICE ACTION
 
 Detect:
 
@@ -878,7 +971,9 @@ Never use one candle pattern as a complete trading decision.
 
 ---
 
-# 29. SUPPORT / RESISTANCE
+## [29. SUPPORT / RESISTANCE](docs/specs/29-support-resistance.md)
+
+# SUPPORT / RESISTANCE
 
 Detect significant levels.
 
@@ -903,7 +998,9 @@ type
 
 ---
 
-# 30. MARKET REGIME
+## [30. MARKET REGIME](docs/specs/30-market-regime.md)
+
+# MARKET REGIME
 
 Detect:
 
@@ -921,7 +1018,13 @@ Strategy compatibility must be considered.
 
 ---
 
-# 31. SIGNAL ENGINE
+# VII · Signals & Scanning
+
+> Explainable signal generation and market scanning.
+
+## [31. SIGNAL ENGINE](docs/specs/31-signal-engine.md)
+
+# SIGNAL ENGINE
 
 Build an explainable signal engine.
 
@@ -958,7 +1061,9 @@ WIN PROBABILITY.
 
 ---
 
-# 32. SIGNAL OUTPUT
+## [32. SIGNAL OUTPUT](docs/specs/32-signal-output.md)
+
+# SIGNAL OUTPUT
 
 Every signal must contain:
 
@@ -986,7 +1091,9 @@ NO TRADE
 
 ---
 
-# 33. EXPLAINABLE ANALYSIS
+## [33. EXPLAINABLE ANALYSIS](docs/specs/33-explainable-analysis.md)
+
+# EXPLAINABLE ANALYSIS
 
 Every signal needs:
 
@@ -1019,7 +1126,13 @@ Strength:
 
 ---
 
-# 34. AUTO SCANNER
+# VIII · Charting
+
+> Advanced and multi-chart visualization.
+
+## [34. AUTO SCANNER](docs/specs/34-auto-scanner.md)
+
+# AUTO SCANNER
 
 Scan available markets.
 
@@ -1052,7 +1165,9 @@ Volatility
 
 ---
 
-# 35. ADVANCED CHART
+## [35. ADVANCED CHART](docs/specs/35-advanced-chart.md)
+
+# ADVANCED CHART
 
 Create professional charting.
 
@@ -1075,7 +1190,9 @@ Rectangle
 
 ---
 
-# 36. MULTI-CHART
+## [36. MULTI-CHART](docs/specs/36-multi-chart.md)
+
+# MULTI-CHART
 
 Support:
 
@@ -1095,7 +1212,13 @@ Zoom where practical
 
 ---
 
-# 37. TRADE PLANNER
+# IX · Trading, Risk & Automation
+
+> Planning, risk control, paper/backtest/demo/real execution and safety stops.
+
+## [37. TRADE PLANNER](docs/specs/37-trade-planner.md)
+
+# TRADE PLANNER
 
 Before execution:
 
@@ -1121,7 +1244,9 @@ Daily risk remaining
 
 ---
 
-# 38. RISK ENGINE
+## [38. RISK ENGINE](docs/specs/38-risk-engine.md)
+
+# RISK ENGINE
 
 The risk engine is one of the most important components.
 
@@ -1148,7 +1273,9 @@ The frontend cannot override this.
 
 ---
 
-# 39. RISK MODES
+## [39. RISK MODES](docs/specs/39-risk-modes.md)
+
+# RISK MODES
 
 Support:
 
@@ -1165,7 +1292,9 @@ Do not implement uncontrolled martingale.
 
 ---
 
-# 40. PAPER TRADING
+## [40. PAPER TRADING](docs/specs/40-paper-trading.md)
+
+# PAPER TRADING
 
 Implement realistic paper execution.
 
@@ -1183,7 +1312,9 @@ This lets the entire system be tested without real money.
 
 ---
 
-# 41. BACKTESTING
+## [41. BACKTESTING](docs/specs/41-backtesting.md)
+
+# BACKTESTING
 
 Support:
 
@@ -1210,7 +1341,9 @@ Do not optimize only for win rate.
 
 ---
 
-# 42. STRATEGY LAB
+## [42. STRATEGY LAB](docs/specs/42-strategy-lab.md)
+
+# STRATEGY LAB
 
 Allow users to create:
 
@@ -1237,7 +1370,9 @@ Real must require explicit activation.
 
 ---
 
-# 43. STRATEGY BUILDER
+## [43. STRATEGY BUILDER](docs/specs/43-strategy-builder.md)
+
+# STRATEGY BUILDER
 
 Visual logic:
 
@@ -1265,7 +1400,9 @@ Volatility
 
 ---
 
-# 44. AI ANALYST
+## [44. AI ANALYST](docs/specs/44-ai-analyst.md)
+
+# AI ANALYST
 
 AI receives structured market data.
 
@@ -1311,7 +1448,9 @@ Deriv
 
 ---
 
-# 45. PAPER → DEMO → REAL PIPELINE
+## [45. PAPER → DEMO → REAL PIPELINE](docs/specs/45-paper-demo-real-pipeline.md)
+
+# PAPER → DEMO → REAL PIPELINE
 
 The system should progress:
 
@@ -1331,7 +1470,9 @@ Each mode must be independently controlled.
 
 ---
 
-# 46. REAL TRADING
+## [46. REAL TRADING](docs/specs/46-real-trading.md)
+
+# REAL TRADING
 
 Default:
 
@@ -1355,7 +1496,9 @@ Audit log
 
 ---
 
-# 47. REAL ACCOUNT UI
+## [47. REAL ACCOUNT UI](docs/specs/47-real-account-ui.md)
+
+# REAL ACCOUNT UI
 
 Always display:
 
@@ -1377,7 +1520,9 @@ REAL
 
 ---
 
-# 48. AUTOMATION
+## [48. AUTOMATION](docs/specs/48-automation.md)
+
+# AUTOMATION
 
 Default:
 
@@ -1399,7 +1544,9 @@ Real automation requires explicit activation.
 
 ---
 
-# 49. EMERGENCY STOP
+## [49. EMERGENCY STOP](docs/specs/49-emergency-stop.md)
+
+# EMERGENCY STOP
 
 Global button:
 
@@ -1419,7 +1566,9 @@ Optional open-position close action must be separately confirmed.
 
 ---
 
-# 50. DUPLICATE TRADE PROTECTION
+## [50. DUPLICATE TRADE PROTECTION](docs/specs/50-duplicate-trade-protection.md)
+
+# DUPLICATE TRADE PROTECTION
 
 Every execution request must contain:
 
@@ -1445,7 +1594,9 @@ Replay requests
 
 ---
 
-# 51. AUDIT LOG
+## [51. AUDIT LOG](docs/specs/51-audit-log.md)
+
+# AUDIT LOG
 
 Record sensitive events:
 
@@ -1471,7 +1622,13 @@ Never store secrets.
 
 ---
 
-# 52. SECURITY CENTER
+# X · User-Facing Features
+
+> Dashboards, journal, alerts, Telegram and terminal.
+
+## [52. SECURITY CENTER](docs/specs/52-security-center.md)
+
+# SECURITY CENTER
 
 Create:
 
@@ -1502,7 +1659,9 @@ Disabled
 
 ---
 
-# 53. PERFORMANCE DASHBOARD
+## [53. PERFORMANCE DASHBOARD](docs/specs/53-performance-dashboard.md)
+
+# PERFORMANCE DASHBOARD
 
 Show:
 
@@ -1530,7 +1689,9 @@ Timeframe performance
 
 ---
 
-# 54. TRADING JOURNAL
+## [54. TRADING JOURNAL](docs/specs/54-trading-journal.md)
+
+# TRADING JOURNAL
 
 Automatically save:
 
@@ -1556,7 +1717,9 @@ Tags
 
 ---
 
-# 55. ALERTS
+## [55. ALERTS](docs/specs/55-alerts.md)
+
+# ALERTS
 
 Support:
 
@@ -1583,7 +1746,9 @@ Webhook
 
 ---
 
-# 56. TELEGRAM
+## [56. TELEGRAM](docs/specs/56-telegram.md)
+
+# TELEGRAM
 
 Optional integration.
 
@@ -1606,7 +1771,9 @@ Telegram must never bypass application security.
 
 ---
 
-# 57. TERMINAL
+## [57. TERMINAL](docs/specs/57-terminal.md)
+
+# TERMINAL
 
 Optional CLI:
 
@@ -1629,7 +1796,13 @@ Rich/Textual.
 
 ---
 
-# 58. UI DESIGN
+# XI · UI / UX
+
+> Design language, layout and responsiveness.
+
+## [58. UI DESIGN](docs/specs/58-ui-design.md)
+
+# UI DESIGN
 
 Professional dark fintech design.
 
@@ -1664,7 +1837,9 @@ Safety
 
 ---
 
-# 59. DASHBOARD
+## [59. DASHBOARD](docs/specs/59-dashboard.md)
+
+# DASHBOARD
 
 Top:
 
@@ -1692,7 +1867,9 @@ Risk events
 
 ---
 
-# 60. RESPONSIVE DESIGN
+## [60. RESPONSIVE DESIGN](docs/specs/60-responsive-design.md)
+
+# RESPONSIVE DESIGN
 
 Desktop:
 
@@ -1719,7 +1896,13 @@ Emergency stop
 
 ---
 
-# 61. SUPABASE REALTIME
+# XII · Platform Operations
+
+> Realtime, performance, retention, errors and fail-safe behavior.
+
+## [61. SUPABASE REALTIME](docs/specs/61-supabase-realtime.md)
+
+# SUPABASE REALTIME
 
 Use Realtime for:
 
@@ -1733,7 +1916,9 @@ Never broadcast private user data.
 
 ---
 
-# 62. PERFORMANCE
+## [62. PERFORMANCE](docs/specs/62-performance.md)
+
+# PERFORMANCE
 
 Optimize for modest hardware.
 
@@ -1755,7 +1940,9 @@ Code splitting
 
 ---
 
-# 63. DATA RETENTION
+## [63. DATA RETENTION](docs/specs/63-data-retention.md)
+
+# DATA RETENTION
 
 Do not store unlimited raw tick data.
 
@@ -1773,7 +1960,9 @@ Audit events → according to policy
 
 ---
 
-# 64. ERROR HANDLING
+## [64. ERROR HANDLING](docs/specs/64-error-handling.md)
+
+# ERROR HANDLING
 
 Never expose internal stack traces to users.
 
@@ -1789,7 +1978,13 @@ Detailed error.
 
 ---
 
-# 65. FAIL-SAFE RULE
+# XIII · Quality Assurance
+
+> Testing, CI, deployment, environments and backups.
+
+## [65. FAIL-SAFE RULE](docs/specs/65-fail-safe-rule.md)
+
+# FAIL-SAFE RULE
 
 If a critical component fails:
 
@@ -1817,7 +2012,9 @@ TRADE BLOCKED
 
 ---
 
-# 66. TESTING
+## [66. TESTING](docs/specs/66-testing.md)
+
+# TESTING
 
 Every module must have tests.
 
@@ -1850,7 +2047,9 @@ Emergency stop
 
 ---
 
-# 67. SECURITY TESTING
+## [67. SECURITY TESTING](docs/specs/67-security-testing.md)
+
+# SECURITY TESTING
 
 Test:
 
@@ -1890,7 +2089,9 @@ Frontend manipulation
 
 ---
 
-# 68. GITHUB ACTIONS
+## [68. GITHUB ACTIONS](docs/specs/68-github-actions.md)
+
+# GITHUB ACTIONS
 
 Every pull request:
 
@@ -1912,7 +2113,9 @@ Deployment should happen only after successful checks.
 
 ---
 
-# 69. DEPLOYMENT
+## [69. DEPLOYMENT](docs/specs/69-deployment.md)
+
+# DEPLOYMENT
 
 Development:
 
@@ -1940,7 +2143,9 @@ Production
 
 ---
 
-# 70. ENVIRONMENTS
+## [70. ENVIRONMENTS](docs/specs/70-environments.md)
+
+# ENVIRONMENTS
 
 Create:
 
@@ -1956,7 +2161,9 @@ Never use production trading credentials during development.
 
 ---
 
-# 71. BACKUP
+## [71. BACKUP](docs/specs/71-backup.md)
+
+# BACKUP
 
 Database:
 
@@ -1974,7 +2181,13 @@ Never back up secrets into GitHub.
 
 ---
 
-# 72. DOCUMENTATION
+# XIV · Engineering Standards
+
+> Code style and hard prohibitions.
+
+## [72. DOCUMENTATION](docs/specs/72-documentation.md)
+
+# DOCUMENTATION
 
 Create:
 
@@ -1995,7 +2208,9 @@ docs/
 
 ---
 
-# 73. CODE STYLE
+## [73. CODE STYLE](docs/specs/73-code-style.md)
+
+# CODE STYLE
 
 Use:
 
@@ -2021,7 +2236,9 @@ Centralized error handling
 
 ---
 
-# 74. DO NOT OVERENGINEER
+## [74. DO NOT OVERENGINEER](docs/specs/74-do-not-overengineer.md)
+
+# DO NOT OVERENGINEER
 
 Do not add:
 
@@ -2039,7 +2256,9 @@ Scale when necessary.
 
 ---
 
-# 75. DO NOT FAKE FUNCTIONALITY
+## [75. DO NOT FAKE FUNCTIONALITY](docs/specs/75-do-not-fake-functionality.md)
+
+# DO NOT FAKE FUNCTIONALITY
 
 Never create:
 
@@ -2067,7 +2286,9 @@ Never make fake functionality appear real.
 
 ---
 
-# 76. DO NOT USE PLACEHOLDER SECURITY
+## [76. DO NOT USE PLACEHOLDER SECURITY](docs/specs/76-do-not-use-placeholder-security.md)
+
+# DO NOT USE PLACEHOLDER SECURITY
 
 Never write:
 
@@ -2093,7 +2314,9 @@ Security must be real.
 
 ---
 
-# 77. DO NOT BYPASS TESTS
+## [77. DO NOT BYPASS TESTS](docs/specs/77-do-not-bypass-tests.md)
+
+# DO NOT BYPASS TESTS
 
 Never say:
 
@@ -2103,7 +2326,9 @@ Testing is part of implementation.
 
 ---
 
-# 78. DO NOT DELETE EXISTING CODE BLINDLY
+## [78. DO NOT DELETE EXISTING CODE BLINDLY](docs/specs/78-do-not-delete-existing-code-blindly.md)
+
+# DO NOT DELETE EXISTING CODE BLINDLY
 
 Before modifying an existing file:
 
@@ -2119,7 +2344,9 @@ Never overwrite the project blindly.
 
 ---
 
-# 79. FILE MODIFICATION RULE
+## [79. FILE MODIFICATION RULE](docs/specs/79-file-modification-rule.md)
+
+# FILE MODIFICATION RULE
 
 Before every significant change, tell the user:
 
@@ -2139,7 +2366,13 @@ Do not delete files unless necessary.
 
 ---
 
-# 80. IMPLEMENTATION REPORT
+# XV · Process Loops & Audits
+
+> Reporting, user testing, bug fixing and audit gates.
+
+## [80. IMPLEMENTATION REPORT](docs/specs/80-implementation-report.md)
+
+# IMPLEMENTATION REPORT
 
 After every phase provide:
 
@@ -2174,7 +2407,9 @@ GIT COMMIT:
 
 ---
 
-# 81. USER TEST LOOP
+## [81. USER TEST LOOP](docs/specs/81-user-test-loop.md)
+
+# USER TEST LOOP
 
 After implementation:
 
@@ -2200,7 +2435,9 @@ Wait for the user's result.
 
 ---
 
-# 82. BUG FIX LOOP
+## [82. BUG FIX LOOP](docs/specs/82-bug-fix-loop.md)
+
+# BUG FIX LOOP
 
 If the user reports:
 
@@ -2221,7 +2458,9 @@ Do not randomly rewrite unrelated parts.
 
 ---
 
-# 83. PERFORMANCE AUDIT
+## [83. PERFORMANCE AUDIT](docs/specs/83-performance-audit.md)
+
+# PERFORMANCE AUDIT
 
 After major phases check:
 
@@ -2238,7 +2477,9 @@ Fix obvious inefficiencies.
 
 ---
 
-# 84. SECURITY AUDIT
+## [84. SECURITY AUDIT](docs/specs/84-security-audit.md)
+
+# SECURITY AUDIT
 
 After major phases check:
 
@@ -2257,7 +2498,9 @@ Trade authorization
 
 ---
 
-# 85. FINAL SECURITY AUDIT
+## [85. FINAL SECURITY AUDIT](docs/specs/85-final-security-audit.md)
+
+# FINAL SECURITY AUDIT
 
 Before production:
 
@@ -2277,7 +2520,9 @@ Do not launch if critical vulnerabilities remain.
 
 ---
 
-# 86. FINAL TRADING SAFETY AUDIT
+## [86. FINAL TRADING SAFETY AUDIT](docs/specs/86-final-trading-safety-audit.md)
+
+# FINAL TRADING SAFETY AUDIT
 
 Verify:
 
@@ -2307,7 +2552,13 @@ Verify:
 
 ---
 
-# 87. PHASE PLAN
+# XVI · Phasing & Conduct
+
+> Phase plan and behavioral rules for the engineer.
+
+## [87. PHASE PLAN](docs/specs/87-phase-plan.md)
+
+# PHASE PLAN
 
 Use exactly this general progression:
 
@@ -2388,7 +2639,9 @@ Production deployment
 
 ---
 
-# 88. PHASE 0 MUST BE FIRST
+## [88. PHASE 0 MUST BE FIRST](docs/specs/88-phase-0-must-be-first.md)
+
+# PHASE 0 MUST BE FIRST
 
 Before doing anything:
 
@@ -2418,7 +2671,9 @@ Do not implement Phase 1 automatically.
 
 ---
 
-# 89. VIBE-CODING BEHAVIOR
+## [89. VIBE-CODING BEHAVIOR](docs/specs/89-vibe-coding-behavior.md)
+
+# VIBE-CODING BEHAVIOR
 
 You should behave like an experienced developer sitting beside the user.
 
@@ -2440,7 +2695,9 @@ Then wait when the decision materially affects architecture.
 
 ---
 
-# 90. WHEN SOMETHING IS UNCLEAR
+## [90. WHEN SOMETHING IS UNCLEAR](docs/specs/90-when-something-is-unclear.md)
+
+# WHEN SOMETHING IS UNCLEAR
 
 Do not invent critical requirements.
 
@@ -2457,7 +2714,9 @@ For minor UI details, choose a sensible default.
 
 ---
 
-# 91. WHEN AN API CHANGES
+## [91. WHEN AN API CHANGES](docs/specs/91-when-an-api-changes.md)
+
+# WHEN AN API CHANGES
 
 Do not assume old documentation is correct.
 
@@ -2478,7 +2737,9 @@ Then implement the correct current approach.
 
 ---
 
-# 92. REAL MONEY RULE
+## [92. REAL MONEY RULE](docs/specs/92-real-money-rule.md)
+
+# REAL MONEY RULE
 
 Until the user explicitly enables the real-trading phase:
 
@@ -2498,7 +2759,13 @@ DEMO ONLY
 
 ---
 
-# 93. FINAL PRODUCT
+# XVII · Final Product
+
+> The finished platform, its architecture and absolute rules.
+
+## [93. FINAL PRODUCT](docs/specs/93-final-product.md)
+
+# FINAL PRODUCT
 
 The finished platform should feel like:
 
@@ -2534,7 +2801,9 @@ without pretending to predict the future.
 
 ---
 
-# 94. FINAL ARCHITECTURE
+## [94. FINAL ARCHITECTURE](docs/specs/94-final-architecture.md)
+
+# FINAL ARCHITECTURE
 
 ```text
                      USER
@@ -2578,7 +2847,9 @@ without pretending to predict the future.
 
 ---
 
-# 95. ABSOLUTE RULES
+## [95. ABSOLUTE RULES](docs/specs/95-absolute-rules.md)
+
+# ABSOLUTE RULES
 
 1. Never expose secrets.
 2. Never store plaintext passwords.
@@ -2602,6 +2873,8 @@ without pretending to predict the future.
 20. Never move to the next phase without user approval.
 
 ---
+
+## [96. START NOW](docs/specs/96-start-now.md)
 
 # START NOW
 
@@ -2632,3 +2905,5 @@ Then:
 WAIT FOR USER APPROVAL.
 
 Do not start implementation until approval is received.
+
+---

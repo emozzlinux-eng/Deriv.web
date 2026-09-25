@@ -1,0 +1,44 @@
+# Environment & secrets — never commit (see docs/specs/16-environment-variables.md, 17-github-security.md)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Node
+node_modules/
+.npm/
+.pnpm-store/
+
+# Builds
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Testing / coverage
+coverage/
+.playwright-mcp/
+test-results/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
