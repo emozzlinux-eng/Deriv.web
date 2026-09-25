@@ -1,0 +1,17 @@
+# MARKET REGIME
+
+Detect:
+
+```text
+TRENDING
+RANGING
+BREAKOUT
+CONSOLIDATING
+HIGH_VOLATILITY
+LOW_VOLATILITY
+UNCERTAIN
+```
+
+Strategy compatibility must be considered.
+
+---
