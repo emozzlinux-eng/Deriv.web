@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@di/shared": ["packages/shared/src/index.ts"],
+      "@di/shared/*": ["packages/shared/src/*"],
+      "@di/candle-engine": ["packages/candle-engine/src/index.ts"],
+      "@di/indicator-engine": ["packages/indicator-engine/src/index.ts"],
+      "@di/analysis-engine": ["packages/analysis-engine/src/index.ts"],
+      "@di/signal-engine": ["packages/signal-engine/src/index.ts"],
+      "@di/risk-engine": ["packages/risk-engine/src/index.ts"],
+      "@di/execution-engine": ["packages/execution-engine/src/index.ts"],
+      "@di/backtest-engine": ["packages/backtest-engine/src/index.ts"],
+      "@di/strategy-engine": ["packages/strategy-engine/src/index.ts"],
+      "@di/deriv-client": ["packages/deriv-client/src/DerivClient.ts"],
+      "@di/market-engine": ["packages/market-engine/src/index.ts"],
+      "@di/paper-engine": ["packages/paper-engine/src/index.ts"]
+    }
+  },
+  "include": ["packages/*/src/**/*", "packages/*/test/**/*"]
+}
